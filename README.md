@@ -1,7 +1,7 @@
 # WS.Demos.TuringMachine
 This project contains a React implementation of the Turing Machines described in *The Annotated Turing* by Charles Petzold.
 
-It is entirely written in `TypeScript` and `React` to run in the browser. There is no server side code. Presentation is via `Bootstrap` and the `react-bootstrap` module.
+It is entirely written in `TypeScript` and `React` to run in the browser. There is no server side code. Presentation is via `Bootstrap`. Since upgrading to Bootstrap 4 the project has switched from using the `react-bootstrap` to the `reactstrap` module.
 
 Use `npm` to download the required modules and `webpack` to compile the TypeScript files into a JavaScript distribution file. Then just open `index.html` in a browser.
 

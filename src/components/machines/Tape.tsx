@@ -13,7 +13,7 @@ export class Tape extends React.Component<ITapeProps, {}> {
     render() {
         var tapeIndex = this.props.headPosition.position + this.props.headPosition.tapeIndexOffest;
         var tape = this.props.tape.map((c, i) => {
-            var cssClass = i === tapeIndex ? "bg-danger" : "bg-info";
+            var cssClass = i === tapeIndex ? "bg-danger text-white" : "bg-info text-white";
             var content = c ? <span>{c}</span> : <span>&nbsp;</span>;
             return (
                 <div key={i} className={cssClass}>{content}</div>

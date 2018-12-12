@@ -4,7 +4,7 @@ import { MachineDescription } from "./machines/MachineDescription";
 import { Machine } from "../library/machines/Machine";
 import { ExampleMachineSelector } from "./machines/ExampleMachineSelector";
 import { Tape } from "./machines/Tape";
-import { FormGroup, ControlLabel } from "react-bootstrap";
+import { Form, FormGroup, Label } from "reactstrap";
 import { IntervalControls } from "./machines/IntervalControls";
 
 export interface IAppState {
@@ -66,12 +66,12 @@ export class App extends React.Component<{}, IAppState> {
         return (
             <div className="container">
                 <h3>Turing Machine Demos</h3>
-                <div className="form-inline">
-                    <FormGroup controlId="exampleMachine">
-                        <ControlLabel>Machine Name</ControlLabel>{" "}
-                        <ExampleMachineSelector exampleMachine={this.state.exampleMachine} exampleMachineChanged={this.exampleMachineChanged} />
+                <Form inline>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Label className="mr-sm-2" for="exampleMachine">Machine Name</Label>{" "}
+                        <ExampleMachineSelector id="exampleMachine" exampleMachine={this.state.exampleMachine} exampleMachineChanged={this.exampleMachineChanged} />
                     </FormGroup>
-                </div>
+                </Form>
                 <MachineDescription machineDescription={machine.machineDescription} currentMConfigurationName={mConfigurationName} currentSymbol={currentSymbol} operationIndex={machine.operationIndex} />
                 <IntervalControls callback={this.performOperation} reset={this.resetMachine} running={this.state.machineRunning} runningChanged={this.machineRunningChanged} />
                 <p>Head Position: {machine.headPosition.position}</p>

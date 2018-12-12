@@ -4,14 +4,20 @@
   "description": "Demonstration of Turing Machines Described in \"The Annotated Turing\" by Charles Petzold",
   "author": "David Brunger",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davebrunger/WS.Demos.TuringMachine.git"
+  },
   "dependencies": {
     "@types/react": "^16.7.7",
-    "@types/react-bootstrap": "^0.32.15",
     "@types/react-dom": "^16.0.10",
-    "bootstrap": "^3.3.7",
+    "@types/reactstrap": "^6.4.3",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
     "react": "^16.6.3",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "reactstrap": "^6.5.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",

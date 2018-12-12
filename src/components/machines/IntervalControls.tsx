@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Form, Button, FormGroup, ControlLabel } from "react-bootstrap";
+import { Form, Button, FormGroup, Label } from "reactstrap";
 import { Interval } from "../../library/utilities/Interval";
+import Input from "reactstrap/lib/Input";
 
 export interface IIntervalControlsProps {
     callback: () => void;
@@ -61,14 +62,14 @@ export class IntervalControls extends React.Component<IIntervalControlsProps, II
     }
 
     private pauseButtonClick() {
-        this.updateRunning(true);
+        this.updateRunning(false);
     }
 
     private resetButtonClick() {
         this.updateRunning(false, false, this.props.reset);
     }
 
-    private intervalDurationChanged(event: React.ChangeEvent<HTMLSelectElement>) {
+    private intervalDurationChanged(event: React.ChangeEvent<HTMLInputElement>) {
         var newIntervalDurationMilliseconds = parseInt(event.currentTarget.value, 10);
         this.setState({
             intervalDurationMilliseconds: newIntervalDurationMilliseconds
@@ -79,17 +80,17 @@ export class IntervalControls extends React.Component<IIntervalControlsProps, II
         return (
             <Form inline>
                 <Interval running={this.state.running} intervalDurationMilliseconds={this.state.intervalDurationMilliseconds} callback={this.props.callback} />
-                <Button bsStyle="success" disabled={this.state.running} onClick={this.startButtonClick}>Start</Button>{" "}
-                <Button bsStyle="primary" disabled={this.state.running} onClick={this.props.callback}>Advance</Button>{" "}
-                <Button bsStyle="primary" disabled={!this.state.running} onClick={this.pauseButtonClick}>Pause</Button>{" "}
-                <Button bsStyle="warning" onClick={this.resetButtonClick}>Reset</Button>{" "}
-                <FormGroup controlId="intervalDuration">
-                    <ControlLabel>Interval Duration</ControlLabel>
-                    <select id="intervalDuration" className="form-control" value={this.state.intervalDurationMilliseconds} onChange={this.intervalDurationChanged}>
+                <Button color="success" className="mb-2 mr-sm-2 mb-sm-0" disabled={this.state.running} onClick={this.startButtonClick}>Start</Button>
+                <Button color="primary" className="mb-2 mr-sm-2 mb-sm-0" disabled={this.state.running} onClick={this.props.callback}>Advance</Button>
+                <Button color="primary" className="mb-2 mr-sm-2 mb-sm-0" disabled={!this.state.running} onClick={this.pauseButtonClick}>Pause</Button>
+                <Button color="warning" className="mb-2 mr-sm-2 mb-sm-0" onClick={this.resetButtonClick}>Reset</Button>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Label for="intervalDuration" className="mr-sm-2">Interval Duration</Label>
+                    <Input type="select" id="intervalDuration" className="form-control" value={this.state.intervalDurationMilliseconds} onChange={this.intervalDurationChanged}>
                         <option value={250}>0.25 Seconds</option>
                         <option value={500}>0.5 Seconds</option>
                         <option value={1000}>1 Second</option>
-                    </select>
+                    </Input>
                 </FormGroup>
             </Form>
         );

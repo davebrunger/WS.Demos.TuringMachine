@@ -4,6 +4,7 @@ import { OperationsCell } from "./OperationsCell";
 import { ArrayUtils } from "../../library/utilities/ArrayUtils";
 import { IBehaviour, Behaviour } from "../../library/machines/IBehaviour";
 import { BehaviourSymbol } from "./BehaviourSymbol";
+import { Table } from "reactstrap";
 
 export interface IMachineDescriptionProps {
     machineDescription: IMachineDescription;
@@ -37,7 +38,7 @@ export class MachineDescription extends React.Component<IMachineDescriptionProps
         });
 
         return (
-            <table className="table table-condensed">
+            <Table size="sm">
                 <thead>
                     <tr>
                         <th>M-Configuration</th>
@@ -49,7 +50,7 @@ export class MachineDescription extends React.Component<IMachineDescriptionProps
                 <tbody>
                     {rows}
                 </tbody>
-            </table>
+            </Table>
         )
     }
 }
