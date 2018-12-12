@@ -1,9 +1,6 @@
-form.form-inline {
-    margin-bottom: 16px;
-}
-
+form.form-inline,
 .tape {
-    margin-bottom: 0.714285715em;
+    margin-bottom: 1rem;
 }
 
 .tape div {
