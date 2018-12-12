@@ -1,0 +1,22 @@
+.tape {
+    margin-bottom: 0.714285715em;
+}
+
+.tape div {
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+    min-width: 1em;
+    text-align: center;
+}
+
+.configuration-name {
+    font-family: "Germania One", serif;
+}
+
+/*
+.form-inline button,
+.form-inline label {
+    margin-right: 3px;
+}
+*/

@@ -1,0 +1,23 @@
+{
+  "name": "ws-demos-turing-machine",
+  "version": "1.0.0",
+  "description": "Demonstration of Turing Machines Described in \"The Annotated Turing\" by Charles Petzold",
+  "author": "David Brunger",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.7.7",
+    "@types/react-bootstrap": "^0.32.15",
+    "@types/react-dom": "^16.0.10",
+    "bootstrap": "^3.3.7",
+    "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.1.6",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
