@@ -5,11 +5,13 @@ import { Print } from "../operations/Print";
 
 export class OneQuarterMachine implements IMachineDescription {
     public readonly name: string;
+    public readonly pageNumber: number;
     public readonly startConfigurationName: string;
     public readonly mConfigurations: IMConfiguration[];
 
     public constructor() {
         this.name = "One Quarter";
+        this.pageNumber = 83;
         this.startConfigurationName = "b";
 
         var moveRight = new MoveRight();

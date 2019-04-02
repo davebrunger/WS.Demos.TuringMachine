@@ -5,11 +5,13 @@ import { Print } from "../operations/Print";
 
 export class OneThirdMachine implements IMachineDescription {
     public readonly name: string;
+    public readonly pageNumber: number;
     public readonly startConfigurationName: string;
     public readonly mConfigurations: IMConfiguration[];
 
     public constructor() {
         this.name = "One Third";
+        this.pageNumber = 81;
         this.startConfigurationName = "b";
 
         var moveRight = new MoveRight();
@@ -38,11 +40,11 @@ export class OneThirdMachine implements IMachineDescription {
                 behaviours: [{
                     symbol: "",
                     operations: [print1, moveRight],
-                    finalMConfigurationName: "f"
+                    finalMConfigurationName: "k"
                 }]
             },
             {
-                name: "f",
+                name: "k",
                 behaviours: [{
                     symbol: "",
                     operations: [moveRight],

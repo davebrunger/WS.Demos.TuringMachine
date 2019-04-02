@@ -25,7 +25,7 @@ export class MachineDescription extends React.Component<IMachineDescriptionProps
         var rows = ArrayUtils.flapMap(this.props.machineDescription.mConfigurations, (c, i) => {
             return c.behaviours.map((behaviour) => {
                 var isCurrentBehaviour = this.isBehaviourMatch(c.name, behaviour);
-                var rowClass = isCurrentBehaviour ? "danger" : "";
+                var rowClass = isCurrentBehaviour ? "table-danger" : "";
                 return (
                     <tr key={`${i}-${behaviour.symbol}`} className={rowClass}>
                         <td className="configuration-name">{c.name}</td>

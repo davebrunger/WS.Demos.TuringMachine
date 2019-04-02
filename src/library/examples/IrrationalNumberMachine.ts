@@ -8,11 +8,13 @@ import { Erase } from "../operations/Erase";
 
 export class IrrationalNumberMachine implements IMachineDescription {
     public readonly name: string;
+    public readonly pageNumber: number;
     public readonly startConfigurationName: string;
     public readonly mConfigurations: IMConfiguration[];
 
     constructor() {
         this.name = "Irrational Number";
+        this.pageNumber = 87;
         this.startConfigurationName = "b";
 
         var printSchwa = new Print("ə");

@@ -66,12 +66,20 @@ export class App extends React.Component<{}, IAppState> {
         return (
             <div className="container">
                 <h3>Turing Machine Demos</h3>
+                <p>
+                    This page demonstrates the operation of a selection of Turing machines that are described and explained in the book
+                    <a href="http://www.charlespetzold.com/books/"><em>The Annotated Turing</em> by Charles Petzold</a>.
+                </p>
                 <Form inline>
                     <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                         <Label className="mr-sm-2" for="exampleMachine">Machine Name</Label>{" "}
                         <ExampleMachineSelector id="exampleMachine" exampleMachine={this.state.exampleMachine} exampleMachineChanged={this.exampleMachineChanged} />
                     </FormGroup>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Label className="mr-sm-2">Page {machine.machineDescription.pageNumber} in <em>The Annotated Turing</em></Label>
+                    </FormGroup>
                 </Form>
+                <h4>{machine.machineDescription.name} <small></small></h4>
                 <MachineDescription machineDescription={machine.machineDescription} currentMConfigurationName={mConfigurationName} currentSymbol={currentSymbol} operationIndex={machine.operationIndex} />
                 <IntervalControls callback={this.performOperation} reset={this.resetMachine} running={this.state.machineRunning} runningChanged={this.machineRunningChanged} />
                 <p>Head Position: {machine.headPosition.position}</p>
